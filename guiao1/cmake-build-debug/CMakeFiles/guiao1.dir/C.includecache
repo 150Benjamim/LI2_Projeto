@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/benjamim/Desktop/projeto/guiao1/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+parser.h
+/home/benjamim/Desktop/projeto/guiao1/parser.h
+
+/home/benjamim/Desktop/projeto/guiao1/parser.c
+stdlib.h
+-
+string.h
+-
+parser.h
+/home/benjamim/Desktop/projeto/guiao1/parser.h
+
+/home/benjamim/Desktop/projeto/guiao1/parser.h
+
