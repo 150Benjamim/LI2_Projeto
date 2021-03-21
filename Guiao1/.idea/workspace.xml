@@ -17,14 +17,6 @@
       <change afterPath="$PROJECT_DIR$/../../code/code/parser.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/stack.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/stack.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../code/guia1.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/stack.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/stack.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/guiao1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/guiao1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/stack.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.name" beforeDir="false" />
@@ -122,7 +114,7 @@
       <updated>1616078948781</updated>
       <workItem from="1616078950093" duration="3530000" />
       <workItem from="1616344783004" duration="606000" />
-      <workItem from="1616347702390" duration="8042000" />
+      <workItem from="1616347702390" duration="8527000" />
     </task>
     <servers />
   </component>
