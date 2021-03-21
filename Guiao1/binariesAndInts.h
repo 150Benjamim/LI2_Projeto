@@ -2,11 +2,13 @@
 #define GUIAO1_BINARIESANDINTS_H
 
 
-int binarytoDec (long bin);
+void dectoBinary (long dec,int lista[],int N);
 
-int dectoBinary (long dec);
-
-
+int binarytoDec  (int lista[],int N);
 
 
-#endif //GUIAO1_BINARIESANDINTS_H
+
+
+
+
+#endif

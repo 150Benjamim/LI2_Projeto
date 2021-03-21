@@ -1,37 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 
 #include "binariesAndInts.h"
 
-/*
-int dectoBinary (long dec){
+
+void dectoBinary (long dec,int lista[],int N){
 
     int i;
-    int a[30] = {};
 
-    for (i = 29; dec > 0; i--) {
-        a[i] = dec % 2;
+    for (i = (N-1); dec > 0; i--) {
+        lista[i] = dec % 2;
         dec = dec / 2;
     }
+}
 
-    int pau = 0;
+int binarytoDec (int lista[],int N){
 
-    while (a[pau] == 0){
-        pau++;
+    int f=19;
+    int numero=0;
+    int exp=0;
+
+    while(N > 0) {
+        numero += lista[f] * pow(2, exp);
+        N--;
+        exp++;
+        f--;
     }
 
-    return pau;
+
+    return numero;
 }
-
-
-int binarytoDec (long bin){
-
-
-
-
-
-}
-
-/*
