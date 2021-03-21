@@ -1,3 +1,0 @@
-/home/benjamim/Desktop/projetoli2/Guioes/Guião1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/benjamim/Desktop/projetoli2/Guioes/Guião1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/benjamim/Desktop/projetoli2/Guioes/Guião1/cmake-build-debug/CMakeFiles/guiao1.dir
