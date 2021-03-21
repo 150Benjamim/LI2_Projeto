@@ -76,6 +76,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.c">
+			<Option target="guiao1"/>
+		</Unit>
+		<Unit filename="/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h">
+			<Option target="guiao1"/>
+		</Unit>
 		<Unit filename="/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/main.c">
 			<Option target="guiao1"/>
 		</Unit>

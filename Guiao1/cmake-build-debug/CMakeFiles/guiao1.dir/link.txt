@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/guiao1.dir/main.c.o CMakeFiles/guiao1.dir/parser.c.o CMakeFiles/guiao1.dir/stack.c.o  -o guiao1 
+/usr/bin/cc -g   CMakeFiles/guiao1.dir/main.c.o CMakeFiles/guiao1.dir/parser.c.o CMakeFiles/guiao1.dir/stack.c.o CMakeFiles/guiao1.dir/binariesAndInts.c.o  -o guiao1 

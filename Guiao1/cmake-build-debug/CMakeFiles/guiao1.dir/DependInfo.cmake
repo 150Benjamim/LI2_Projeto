@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.c" "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/cmake-build-debug/CMakeFiles/guiao1.dir/binariesAndInts.c.o"
   "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/main.c" "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/cmake-build-debug/CMakeFiles/guiao1.dir/main.c.o"
   "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/parser.c" "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o"
   "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/stack.c" "/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/cmake-build-debug/CMakeFiles/guiao1.dir/stack.c.o"

@@ -4,6 +4,7 @@
 
 #include "parser.h"
 #include "stack.h"
+#include "binariesAndInts.h"
 
 
 void parse(char *line) {
@@ -54,7 +55,20 @@ void parse(char *line) {
             }
             PUSH(X);
         }
+       /* else if (strcmp(token, "&") == 0){
+            long Y = POP();
+            long X = POP();
+            dectoBinary(X);
+            dectoBinary(Y);
+            for (int i = 0; i<30, i++){
+            if
+            }
+        }
+            PUSH(Y + 1);
 
     }
+        */
+
+
     PRINT_STACK();
 }

@@ -143,6 +143,33 @@ guiao1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/guiao1.dir/build.make CMakeFiles/guiao1.dir/build
 .PHONY : guiao1/fast
 
+binariesAndInts.o: binariesAndInts.c.o
+
+.PHONY : binariesAndInts.o
+
+# target to build an object file
+binariesAndInts.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/guiao1.dir/build.make CMakeFiles/guiao1.dir/binariesAndInts.c.o
+.PHONY : binariesAndInts.c.o
+
+binariesAndInts.i: binariesAndInts.c.i
+
+.PHONY : binariesAndInts.i
+
+# target to preprocess a source file
+binariesAndInts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/guiao1.dir/build.make CMakeFiles/guiao1.dir/binariesAndInts.c.i
+.PHONY : binariesAndInts.c.i
+
+binariesAndInts.s: binariesAndInts.c.s
+
+.PHONY : binariesAndInts.s
+
+# target to generate assembly for a file
+binariesAndInts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/guiao1.dir/build.make CMakeFiles/guiao1.dir/binariesAndInts.c.s
+.PHONY : binariesAndInts.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -233,6 +260,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... guiao1"
+	@echo "... binariesAndInts.o"
+	@echo "... binariesAndInts.i"
+	@echo "... binariesAndInts.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -3,4 +3,4 @@ project(guiao1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(guiao1 main.c parser.h parser.c stack.h stack.c)
+add_executable(guiao1 main.c parser.h parser.c stack.h stack.c binariesAndInts.c binariesAndInts.h)

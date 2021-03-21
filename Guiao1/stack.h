@@ -5,7 +5,7 @@
 
 int stack [10];
 
-int PUSH();
+int PUSH(int data);
 int POP();
 void PRINT_STACK();
 

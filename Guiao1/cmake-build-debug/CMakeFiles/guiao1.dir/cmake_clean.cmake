@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/guiao1.dir/binariesAndInts.c.o"
   "CMakeFiles/guiao1.dir/main.c.o"
   "CMakeFiles/guiao1.dir/parser.c.o"
   "CMakeFiles/guiao1.dir/stack.c.o"
