@@ -3,6 +3,11 @@
 #include <string.h>
 
 #include "parser.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "parser.h"
 #include "stack.h"
 #include "binariesAndInts.h"
 
@@ -124,7 +129,6 @@ void parse(char *line) {
 
             PUSH(last);
         }
-
 
     PRINT_STACK();
 }
