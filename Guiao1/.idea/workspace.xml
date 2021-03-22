@@ -35,16 +35,7 @@
       <change afterPath="$PROJECT_DIR$/../../projeto/f1/.idea/f1.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../projeto/guiao1/.idea/guiao1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binariesAndInts.c" beforeDir="false" afterPath="$PROJECT_DIR$/binariesAndInts.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binariesAndInts.h" beforeDir="false" afterPath="$PROJECT_DIR$/binariesAndInts.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/stack.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/stack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.name" beforeDir="false" />
@@ -144,7 +135,7 @@
       <workItem from="1616347702390" duration="8939000" />
       <workItem from="1616362933148" duration="7901000" />
       <workItem from="1616371255363" duration="132000" />
-      <workItem from="1616371394981" duration="2869000" />
+      <workItem from="1616371394981" duration="6280000" />
     </task>
     <servers />
   </component>

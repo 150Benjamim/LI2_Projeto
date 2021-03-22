@@ -122,7 +122,7 @@ void parse(char *line) {
             PUSH(last);
         } else if (strcmp(token, "~") == 0) {
             long X = POP();
-            
+
             PUSH(-X-1);
         }
     }
