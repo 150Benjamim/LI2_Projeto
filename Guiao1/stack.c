@@ -44,7 +44,13 @@ int PUSH(int data) {
 
 void PRINT_STACK(){
 
-        printf ("%d\n",stack[top]);
+    int i = 0;
+
+    while (i<=top){
+        printf ("%d",stack[i]);
+        i++;
+    }
+
 }
 
 

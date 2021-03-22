@@ -12,18 +12,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c88fe49-c672-4c3d-a3a8-d0a70169efde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/f1/.idea/f1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/f2/.idea/f2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/f3/.idea/f3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/f4/.idea/f4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/f4dec/.idea/f4dec.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/LI2/fodasse/.idea/fodasse.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/50perguntas/.idea/50perguntas.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha1/exc3.1/.idea/f2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha1/exc3.2/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha1/exc3.3/.idea/exc3.3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha1/exc3.4/.idea/exc3.4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha2/.idea/ficha2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha3/.idea/ficha3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/miniteste/.idea/miniteste.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/untitled/.idea/untitled.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/main.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/parser.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/parser.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/stack.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../code/code/stack.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../projeto/f1/.idea/f1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../projeto/guiao1/.idea/guiao1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/binariesAndInts.c" beforeDir="false" afterPath="$PROJECT_DIR$/binariesAndInts.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/binariesAndInts.h" beforeDir="false" afterPath="$PROJECT_DIR$/binariesAndInts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/guiao1.dir/parser.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/guiao1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/stack.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/stack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../projetoli2/Guiao1/.idea/.name" beforeDir="false" />
@@ -98,6 +119,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../2020-2021/2 semestre/Programação Imperativa/ficha2" />
@@ -106,11 +128,6 @@
     <configuration name="guiao1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="guiao1" TARGET_NAME="guiao1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="guiao1" RUN_TARGET_NAME="guiao1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -126,6 +143,8 @@
       <workItem from="1616344783004" duration="606000" />
       <workItem from="1616347702390" duration="8939000" />
       <workItem from="1616362933148" duration="7901000" />
+      <workItem from="1616371255363" duration="132000" />
+      <workItem from="1616371394981" duration="2869000" />
     </task>
     <servers />
   </component>

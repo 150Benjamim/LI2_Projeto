@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-math.h
--
-binariesAndInts.h
-/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h
-
 /home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h
 
 /home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/parser.c

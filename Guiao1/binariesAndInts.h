@@ -4,11 +4,6 @@
 
 void dectoBinary (long dec,int lista[],int N);
 
-
-int binarytoDec  (int lista[],int N);
-
-
-
 int binarytoDec  (int lista[],int N);
 
 
@@ -16,4 +11,4 @@ int binarytoDec  (int lista[],int N);
 
 
 
-#endif
+#endif //GUIAO1_BINARIESANDINTS_H

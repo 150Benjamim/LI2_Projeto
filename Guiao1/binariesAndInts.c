@@ -19,7 +19,7 @@ void dectoBinary (long dec,int lista[],int N){
 
 int binarytoDec (int lista[],int N){
 
-    int f=19;
+    int f=(N-1);
     int numero=0;
     int exp=0;
 
