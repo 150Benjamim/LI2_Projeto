@@ -13,8 +13,28 @@ stdlib.h
 -
 string.h
 -
+math.h
+-
 binariesAndInts.h
 /home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h
 
 /home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h
+
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/parser.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+parser.h
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/parser.h
+stack.h
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/stack.h
+binariesAndInts.h
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/binariesAndInts.h
+
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/parser.h
+
+/home/benjamim/Desktop/ProjetoLI2ZEROOOOO/Guiao1/stack.h
 

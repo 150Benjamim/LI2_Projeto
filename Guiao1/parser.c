@@ -55,19 +55,75 @@ void parse(char *line) {
             }
             PUSH(X);
         }
-       /* else if (strcmp(token, "&") == 0){
+       else if (strcmp(token, "&") == 0){
             long Y = POP();
             long X = POP();
-            dectoBinary(X);
-            dectoBinary(Y);
-            for (int i = 0; i<30, i++){
-            if
-            }
-        }
-            PUSH(Y + 1);
+            int x[20]={0},
+                y[20]={0};
 
+            dectoBinary(Y,y,20);
+
+            dectoBinary(X,x,20);
+
+            int final[20];
+
+            long last;
+
+            for (int array = 0; array<20; array++){
+                if ((x[array] == y[array]) && (x[array] != 0)) final[array] = 1;
+                else final[array] = 0;
+            }
+
+            last = binarytoDec(final,20);
+
+            PUSH(last);
+        }
+        else if (strcmp(token, "|") == 0){
+            long Y = POP();
+            long X = POP();
+            int x[20]={0},
+                y[20]={0};
+
+            dectoBinary(Y,y,20);
+
+            dectoBinary(X,x,20);
+
+            int final[20];
+
+            long last;
+
+            for (int array = 0; array<20; array++){
+                if ((x[array] == 1) || (x[array] == 1)) final[array] = 1;
+                else final[array] = 0;
+            }
+
+            last = binarytoDec(final,20);
+
+            PUSH(last);
     }
-        */
+        else if (strcmp(token, "|") == 0){
+            long Y = POP();
+            long X = POP();
+            int x[20]={0},
+                    y[20]={0};
+
+            dectoBinary(Y,y,20);
+
+            dectoBinary(X,x,20);
+
+            int final[20];
+
+            long last;
+
+            for (int array = 0; array<20; array++){
+                if ((x[array] == 1) || (x[array] == 1)) final[array] = 1;
+                else final[array] = 0;
+            }
+
+            last = binarytoDec(final,20);
+
+            PUSH(last);
+        }
 
 
     PRINT_STACK();

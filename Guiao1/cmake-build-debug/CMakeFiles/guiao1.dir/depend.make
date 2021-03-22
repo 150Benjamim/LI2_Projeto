@@ -7,6 +7,7 @@ CMakeFiles/guiao1.dir/binariesAndInts.c.o: ../binariesAndInts.h
 CMakeFiles/guiao1.dir/main.c.o: ../main.c
 CMakeFiles/guiao1.dir/main.c.o: ../parser.h
 
+CMakeFiles/guiao1.dir/parser.c.o: ../binariesAndInts.h
 CMakeFiles/guiao1.dir/parser.c.o: ../parser.c
 CMakeFiles/guiao1.dir/parser.c.o: ../parser.h
 CMakeFiles/guiao1.dir/parser.c.o: ../stack.h
