@@ -1,9 +1,8 @@
 #ifndef GUIAO1_STACK_H
 #define GUIAO1_STACK_H
 
-#define MAXSIZE 100
+#define MAXSIZE 10000
 
-int stack [100];
 
 int PUSH(int data);
 int POP();

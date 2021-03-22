@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #include "stack.h"
 
 int top = -1;
+int stack [MAXSIZE];
+
 
 int isempty() {
 
@@ -30,7 +30,7 @@ int POP() {
         top = top - 1;
         return data;
     }
-    else return 0;
+    return 0;
 }
 
 int PUSH(int data) {
