@@ -1,9 +1,21 @@
+/*!
+ * @file Ficheiro que contém a função principal do programa.
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
 
 #include "parser.h"
 
+/**
+ * \brief Esta é a função principal do programa.
+ *
+ * 
+ * 
+ *
+ * @returns Devolve o valor 0.
+ */
 
 int main() {
 
