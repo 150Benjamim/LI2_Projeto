@@ -34,6 +34,10 @@ DATA top(STACK *s){
     return s->stack[s->n_elems-1];
 }
 
+int is_empty(STACK *s) {
+    return s->n_elems == 0;
+}
+
 void print_stack(STACK *s) {
     for (int K = 0; K < s->n_elems; K++) {
         DATA elem = s->stack[K];
@@ -57,7 +61,7 @@ void print_stack(STACK *s) {
 }
 
 
-#define STACK_OPERATION(_type,_name)    \
+#define STACK_OPERATION(_type, _name)    \
     void push_##_name(STACK *s, _type val){ \
         DATA elem;                      \
         elem.type = _name;              \
@@ -70,8 +74,8 @@ void print_stack(STACK *s) {
         return elem._name;              \
     }                                   \
 
-STACK_OPERATION_PROTO(long,LONG)
-STACK_OPERATION_PROTO(double,DOUBLE)
-STACK_OPERATION_PROTO(char,CHAR)
-STACK_OPERATION_PROTO(char *,STRING)
+STACK_OPERATION(long,LONG)
+STACK_OPERATION(double,DOUBLE)
+STACK_OPERATION(char,CHAR)
+STACK_OPERATION(char *,STRING)
 

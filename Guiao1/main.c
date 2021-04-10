@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include "stack.h"
+#include "parser.h"
 
-    void imprime_tipo(STACK *s){
-        if (has_type(top(s), STRING)) putchar ('S');
-        if (has_type(top(s), INTEGER)) putchar ('I');
-        if (has_type(top(s), DOUBLE)) putchar ('D');
-        if (has_type(top(s), NUMBER)) putchar ('N');
-        printf ("\n");
-    }
+void imprime_tipo(STACK *s){
+    if (has_type(top(s), STRING)) putchar ('S');
+    if (has_type(top(s), INTEGER)) putchar ('I');
+    if (has_type(top(s), DOUBLE)) putchar ('D');
+    if (has_type(top(s), NUMBER)) putchar ('N');
+    printf ("\n");
+}
 
 int main(void) {
 
