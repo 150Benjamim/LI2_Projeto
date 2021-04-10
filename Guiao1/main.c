@@ -1,18 +1,28 @@
 #include <stdio.h>
 #include <string.h>
-#include <assert.h>
+#include "stack.h"
 
-#include "parser.h"
+    void imprime_tipo(STACK *s){
+        if (has_type(top(s), STRING)) putchar ('S');
+        if (has_type(top(s), INTEGER)) putchar ('I');
+        if (has_type(top(s), DOUBLE)) putchar ('D');
+        if (has_type(top(s), NUMBER)) putchar ('N');
+        printf ("\n");
+    }
 
+int main(void) {
 
-int main() {
+    STACK *s = create_stack();
 
-    char line[10240];
+    push_STRING (s, strdup("ola mundo")); imprime_tipo(s);
+    push_LONG (s, 2); imprime_tipo(s);
+    push_DOUBLE (s,3.2); imprime_tipo(s);
+    push_CHAR (s, 'A'); imprime_tipo(s);
+    print_stack(s);
 
-    assert ( fgets (line, 10240, stdin) != NULL);
-    assert ( line[strlen(line) - 1] == '\n'    );
-
-    parse(line);
+    printf("%c\n", pop_CHAR(s));
+    printf ("%g\n",pop_DOUBLE(s));
+    printf("%ld\n",pop_LONG(s));
 
     return 0;
 }

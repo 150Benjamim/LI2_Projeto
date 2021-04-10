@@ -15,57 +15,57 @@ void parse(char *line) {
         char *sobra;
         long val_i = strtol(token, &sobra, 10);
         if (strlen(sobra) == 0) {
-            PUSH(val_i);
+            push(val_i);
         } else if (strcmp(token, "+") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X + Y);
+            long Y = pop();
+            long X = pop();
+            push(X + Y);
         } else if (strcmp(token, "-") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X - Y);
+            long Y = pop();
+            long X = pop();
+            push(X - Y);
         } else if (strcmp(token, "*") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X * Y);
+            long Y = pop();
+            long X = pop();
+            push(X * Y);
         } else if (strcmp(token, "/") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X / Y);
+            long Y = pop();
+            long X = pop();
+            push(X / Y);
         } else if (strcmp(token, "(") == 0) {
-            long X = POP();
-            PUSH(X - 1);
+            long X = pop();
+            push(X - 1);
         } else if (strcmp(token, ")") == 0) {
-            long X = POP();
-            PUSH(X + 1);
+            long X = pop();
+            push(X + 1);
         } else if (strcmp(token, "%") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X % Y);
+            long Y = pop();
+            long X = pop();
+            push(X % Y);
         } else if (strcmp(token, "#") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(pow(X,Y));
+            long Y = pop();
+            long X = pop();
+            push(pow(X,Y));
         } else if (strcmp(token, "&") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X & Y);
+            long Y = pop();
+            long X = pop();
+            push(X & Y);
         } else if (strcmp(token, "|") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH(X | Y);
+            long Y = pop();
+            long X = pop();
+            push(X | Y);
         } else if (strcmp(token, "^") == 0) {
-            long Y = POP();
-            long X = POP();
-            PUSH (X ^ Y);
+            long Y = pop();
+            long X = pop();
+            push (X ^ Y);
         } else if (strcmp(token, "~") == 0) {
-            long X = POP();
-            PUSH(~X);
+            long X = pop();
+            push(~X);
         }
     }
 
 
-    PRINT_STACK();
+    print_stack();
 
     printf ("\n");
 }
