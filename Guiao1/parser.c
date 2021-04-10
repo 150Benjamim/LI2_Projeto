@@ -2,7 +2,6 @@
  * @file As funções correspondentes ao parser.
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -51,7 +50,6 @@
 * @param line 108 - Aqui verificamos para quando a string tiver o caractér "~".
 * @returns Transforma o seu único elemento em binário e inverte os valores dos seus bites.
 */
-
 
 void parse(char *line) {
 
