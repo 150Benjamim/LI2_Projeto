@@ -11,20 +11,26 @@ void parse(char *line) {
     char *delims = " \t\n";
 
     char coca[10240];
-
-    char *fodasse;
+    char *aux;
 
     STACK *s = create_stack();
 
     for (char *token = strtok(line, delims); token != NULL; token = strtok(NULL, delims)) {
         char *sobra;
-        long val_i = strtol(token, &sobra, 10);
+        double val_i = strtod(token, &sobra);
         if (strlen(sobra) == 0) {
-            push_LONG(s, val_i);
+            push_DOUBLE(s, val_i);
         } else if (strcmp(token, "+") == 0) {
-            long Y = pop_LONG(s);
-            long X = pop_LONG(s);
-            push_LONG(s, X + Y);
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            if (X.type == 2 || Y.type == 2){
+                double r = X.DOUBLE + Y.DOUBLE;
+                push_DOUBLE(s,r);
+            }
+            else {
+                float r = X.LONG + Y.LONG;
+                push_LONG(s,r);
+            }
         } else if (strcmp(token, "-") == 0) {
             long Y = pop_LONG(s);
             long X = pop_LONG(s);
@@ -75,7 +81,7 @@ void parse(char *line) {
             push_LONG(s, Y);
         } else if (strcmp(token, "f") == 0) {
             char *X = pop_STRING(s);
-            double Y = strtod(X, &fodasse);
+            double Y = strtod(X, &aux);
             push_DOUBLE(s, Y);
         }
     }
