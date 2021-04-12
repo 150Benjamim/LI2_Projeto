@@ -12,6 +12,7 @@ void imprime_tipo(STACK *s){
     printf ("\n");
 }
 
+/**
 int main(void) {
 
     STACK *s = create_stack();
@@ -28,8 +29,8 @@ int main(void) {
 
     return 0;
 }
+**/
 
-/**
 int main() {
 
     char line[10240];
@@ -41,5 +42,5 @@ int main() {
 
     return 0;
 }
-**/
+
 

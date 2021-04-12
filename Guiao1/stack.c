@@ -7,7 +7,6 @@ int has_type(DATA elem, int mask){
     return (elem.type & mask) != 0;
 }
 
-
 STACK *create_stack(){
     STACK *s = (STACK *) malloc(sizeof(STACK));
     s->n_elems = 0;
@@ -44,16 +43,16 @@ void print_stack(STACK *s) {
         TYPE type = elem.type;
         switch (type){
             case LONG:
-                printf(" ""%ld", elem.LONG);
+                printf("%ld", elem.LONG);
                 break;
             case DOUBLE:
-                printf(" ""%g", elem.DOUBLE);
+                printf("%g", elem.DOUBLE);
                 break;
             case CHAR:
-                printf(" ""%c", elem.CHAR);
+                printf("%c", elem.CHAR);
                 break;
             case STRING:
-                printf(" ""%s", elem.STRING);
+                printf("%s", elem.STRING);
                 break;
         }
     }
@@ -61,18 +60,18 @@ void print_stack(STACK *s) {
 }
 
 
-#define STACK_OPERATION(_type, _name)    \
+#define STACK_OPERATION(_type, _name)       \
     void push_##_name(STACK *s, _type val){ \
-        DATA elem;                      \
-        elem.type = _name;              \
-        elem._name = val;               \
-        push(s,elem);                   \
-    }                                   \
-    _type pop_##_name(STACK *s){        \
-        DATA elem = pop(s);             \
-        assert(elem.type == _name);     \
-        return elem._name;              \
-    }                                   \
+        DATA elem;                          \
+        elem.type = _name;                  \
+        elem._name = val;                   \
+        push(s,elem);                       \
+    }                                       \
+    _type pop_##_name(STACK *s){            \
+        DATA elem = pop(s);                 \
+        assert(elem.type == _name);         \
+        return elem._name;                  \
+    }                                       \
 
 STACK_OPERATION(long,LONG)
 STACK_OPERATION(double,DOUBLE)
