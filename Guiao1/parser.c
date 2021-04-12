@@ -114,6 +114,23 @@ void parse(char *line) {
             else if (X.type == 1) Y = X.LONG;
             else Y = X.DOUBLE;
             push_LONG(s, Y);
+        } else if (strcmp(token, "_") == 0){
+            DATA X = pop(s);
+            double r,r2;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            r2 = r;
+            push_DOUBLE(s,r);
+            push_DOUBLE(s,r2);
+        }else if (strcmp(token, ";")== 0){
+            pop(s);
+        }else if (strcmp(token, "\"") == 0){
+            DATA X = pop(s);
+            DATA Y = pop(s);
+            double r,r2;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
+            push_DOUBLE(s,r2);
+            push_DOUBLE(s,r);
         } else if (strcmp(token, "f") == 0) {
             DATA X = pop(s);
             float Y;
