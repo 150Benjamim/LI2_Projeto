@@ -95,18 +95,19 @@ void print_stack(STACK *s) {
  * @param line 69 - Esta função define todas as operações que alteram os elementos da stack ("pop" e "push")
  */
 
-#define STACK_OPERATION(_type, _name)       
-    void push_##_name(STACK *s, _type val){ 
-        DATA elem;                          
-        elem.type = _name;                  
-        elem._name = val;                   
-        push(s,elem);                       
-    }                                       
-    _type pop_##_name(STACK *s){            
-        DATA elem = pop(s);                 
-        assert(elem.type == _name);         
-        return elem._name;                  
-    }                                       
+#define STACK_OPERATION(_type, _name)       \
+    void push_##_name(STACK *s, _type val){ \
+        DATA elem;                          \
+        elem.type = _name;                  \
+        elem._name = val;                   \
+        push(s,elem);                       \
+    }                                       \
+    _type pop_##_name(STACK *s){            \
+        DATA elem = pop(s);                 \
+        assert(elem.type == _name);         \
+        return elem._name;                  \
+    }                                       \
+
 
 STACK_OPERATION(long,LONG)
 STACK_OPERATION(double,DOUBLE)
