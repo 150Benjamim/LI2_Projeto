@@ -21,9 +21,7 @@ void parse(char *line) {
         long val_l = strtol(token, &sobra,10);
         double val_d = strtod(token,&sobra);
         if (strlen(sobra) == 0){
-
             int i = 0, flag = 0;
-
             while(val_i[i++] != '\0'){
                 if(val_i[i] == '.'){
                     flag = 1;
@@ -35,7 +33,7 @@ void parse(char *line) {
         } else if (strcmp(token, "+") == 0) {
             DATA Y = pop(s);
             DATA X = pop(s);
-            double r=0;
+            double r;
             if (X.type==1) r = X.LONG; else r = X.DOUBLE;
             if (Y.type==1) r += Y.LONG; else r += Y.DOUBLE;
             if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
@@ -72,12 +70,14 @@ void parse(char *line) {
             }
         } else if (strcmp(token, "(") == 0) {
             DATA X = pop(s);
-            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)--);
-            else push_LONG(s,(X.LONG)--);
+            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)-1);
+            else if (X.type==1) push_LONG(s,(X.LONG)-1);
+            else if (X.type==4) push_CHAR(s,(X.CHAR)-1);
         } else if (strcmp(token, ")") == 0) {
             DATA X = pop(s);
-            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)++);
-            else push_LONG(s,(X.LONG)++);
+            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)+1);
+            else if (X.type==1) push_LONG(s,(X.LONG)+1);
+            else if (X.type==4) push_CHAR(s,(X.CHAR)+1);
         } else if (strcmp(token, "%") == 0) {
             DATA Y = pop(s);
             DATA X = pop(s);
@@ -121,18 +121,9 @@ void parse(char *line) {
             push_LONG(s, ~X);
         } else if (strcmp(token, "_") == 0){
             DATA X = pop(s);
-            double r,r2;
-            if (X.type==1){
-                r = X.LONG;
-                r2 = r;
-                push_LONG(s,r);
-                push_LONG(s,r2);
-            } else{
-                r = X.DOUBLE;
-                r2 = r;
-                push_DOUBLE(s,r);
-                push_DOUBLE(s,r2);
-            }
+            DATA Y = X;
+            push(s,X);
+            push(s,Y);
         }else if (strcmp(token, ";")== 0){
             pop(s);
         }else if (strcmp(token, "c") == 0) {
@@ -141,6 +132,7 @@ void parse(char *line) {
                 char r = X.LONG;
                 push_CHAR(s,r);
             }
+            else push(s,X);
         }else if (strcmp(token, "\\") == 0){
             DATA X = pop(s);
             DATA Y = pop(s);
@@ -171,18 +163,16 @@ void parse(char *line) {
         } else if (strcmp(token, "i") == 0) {
             DATA X = pop(s);
             int Y;
-            if ((X.type == 4) || (X.type == 8)) {
-                Y = strtol(X.STRING, &sobra, 10);
-            }
+            if (X.type == 4) Y = X.CHAR;
+            else if (X.type == 8) Y = strtol(X.STRING, &sobra, 10);
             else if (X.type == 1) Y = X.LONG;
             else Y = X.DOUBLE;
             push_LONG(s, Y);
         } else if (strcmp(token, "f") == 0) {
             DATA X = pop(s);
             float Y;
-            if ((X.type == 4) || (X.type == 8)) {
-                Y = strtof(X.STRING, &sobra);
-            }
+            if (X.type == 4) Y = X.CHAR;
+            else if (X.type == 8) Y = strtof(X.STRING, &sobra);
             else if (X.type == 1) Y = X.LONG;
             else Y = X.DOUBLE;
             push_DOUBLE(s, Y);
