@@ -190,9 +190,8 @@ void parse(char *line) {
             push_LONG(s, ~X);
         } else if (strcmp(token, "_") == 0){
             DATA X = pop(s);
-            DATA Y = X;
             push(s,X);
-            push(s,Y);
+            push(s,X);
         }else if (strcmp(token, ";")== 0){
             pop(s);
         }else if (strcmp(token, "c") == 0) {
@@ -215,18 +214,143 @@ void parse(char *line) {
             push(s,Z);
             push(s,X);
         } else if (strcmp(token, "$") == 0) {
-
             int i = 0;
             int x = pop_LONG(s);
             STACK stackAux = *s;
-
             while (i!=x) {
                 pop(&stackAux);
                 i++;
             }
             DATA A = pop(&stackAux);
             push(s,A);
-        }else if (strcmp(token, "l") == 0) {
+        }else if (strcmp(token, "=") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX == auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+        } else if (strcmp(token, "<") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX < auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+        } else if (strcmp(token, "=") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX > auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+        } else if (strcmp(token, "!") == 0) {
+            int X = pop_LONG(s);
+            if (X == 0) push_LONG(s,1);
+            else push_LONG(s,0);
+        } else if (strcmp(token, "e&") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX != 0 && auxY != 0){
+                if (X.type == 1) push_LONG(s,auxX);
+                else push_DOUBLE(s,auxX);
+            }
+            else push_LONG(s,0);
+        } else if (strcmp(token, "e|") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX == 0 && auxY == 0){
+                push_LONG(s,0);
+            }
+            else if (auxX != 0){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+        } else if (strcmp(token, "e<") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX <= auxY){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+        } else if (strcmp(token, "e>") == 0) {
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX >= auxY){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+        } else if (strcmp(token, "A") == 0) {
+            push_LONG(s,10);
+        } else if (strcmp(token, "B") == 0) {
+            push_LONG(s,11);
+        } else if (strcmp(token, "C") == 0) {
+            push_LONG(s,12);
+        } else if (strcmp(token, "D") == 0) {
+            push_LONG(s,13);
+        } else if (strcmp(token, "E") == 0) {
+            push_LONG(s,14);
+        }   else if (strcmp(token, "F") == 0) {
+            push_LONG(s,15);
+        } else if (strcmp(token, "N") == 0) {
+            push_CHAR(s,'\n');
+        } else if (strcmp(token, "S") == 0) {
+            push_CHAR(s,' ');
+        } else if (strcmp(token, "X") == 0) {
+            push_LONG(s,0);
+        } else if (strcmp(token, "Y") == 0) {
+            push_LONG(s,1);
+        } else if (strcmp(token, "Z") == 0) {
+            push_LONG(s,2);
+        } else if (strcmp(token, "l") == 0) {
             assert (fgets(coca, 10240, stdin) != NULL);
             push_STRING(s, coca);
         } else if (strcmp(token, "i") == 0) {
