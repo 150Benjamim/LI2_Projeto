@@ -81,6 +81,17 @@ void parse(char *line) {
 
     char coca[10240];
 
+    DATA A = {1,10,0,0,0};
+    DATA B = {1,11,0,0,0};
+    DATA C = {1,12,0,0,0};
+    DATA D = {1,13,0,0,0};
+    DATA E = {1,14,0,0,0};
+    DATA F = {1,15,0,0,0};
+    DATA N = {4,0,0,'\n',0};
+    DATA S = {4,0,0,' ',0};
+    DATA XX = {1,0,0,0,0};
+    DATA YY = {1,1,0,0,0};
+    DATA ZZ = {1,2,0,0,0};
 
     STACK *s = create_stack();
 
@@ -245,7 +256,7 @@ void parse(char *line) {
             else auxY = Y.DOUBLE;
             if (auxX < auxY) push_LONG(s,1);
             else push_LONG(s,0);
-        } else if (strcmp(token, "=") == 0) {
+        } else if (strcmp(token, ">") == 0) {
             DATA Y = pop(s);
             DATA X = pop(s);
             double auxX;
@@ -329,27 +340,71 @@ void parse(char *line) {
                 else push_DOUBLE(s, auxY);
             }
         } else if (strcmp(token, "A") == 0) {
-            push_LONG(s,10);
+            push(s,A);
         } else if (strcmp(token, "B") == 0) {
-            push_LONG(s,11);
+            push(s,B);
         } else if (strcmp(token, "C") == 0) {
-            push_LONG(s,12);
+            push(s,C);
         } else if (strcmp(token, "D") == 0) {
-            push_LONG(s,13);
+            push(s,D);
         } else if (strcmp(token, "E") == 0) {
-            push_LONG(s,14);
+            push(s,E);
         }   else if (strcmp(token, "F") == 0) {
-            push_LONG(s,15);
+            push(s,F);
         } else if (strcmp(token, "N") == 0) {
-            push_CHAR(s,'\n');
+            push(s,N);
         } else if (strcmp(token, "S") == 0) {
-            push_CHAR(s,' ');
+            push(s,S);
         } else if (strcmp(token, "X") == 0) {
-            push_LONG(s,0);
+            push(s,XX);
         } else if (strcmp(token, "Y") == 0) {
-            push_LONG(s,1);
+            push(s,YY);
         } else if (strcmp(token, "Z") == 0) {
-            push_LONG(s,2);
+            push(s,ZZ);
+        } else if (strcmp(token, ":A") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            A = X;
+        } else if (strcmp(token, ":B") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            B = X;
+        } else if (strcmp(token, ":C") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            C = X;
+        } else if (strcmp(token, ":D") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            D = X;
+        } else if (strcmp(token, ":E") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            E = X;
+        }   else if (strcmp(token, ":F") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            F = X;
+        } else if (strcmp(token, ":N") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            N = X;
+        } else if (strcmp(token, ":S") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            S = X;
+        } else if (strcmp(token, ":X") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            XX = X;
+        } else if (strcmp(token, ":Y") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            YY = X;
+        } else if (strcmp(token, ":Z") == 0) {
+            DATA X = pop(s);
+            push(s,X);
+            ZZ = X;
         } else if (strcmp(token, "l") == 0) {
             assert (fgets(coca, 10240, stdin) != NULL);
             push_STRING(s, coca);
