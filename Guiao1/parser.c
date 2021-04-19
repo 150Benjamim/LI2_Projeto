@@ -268,9 +268,20 @@ void parse(char *line) {
             if (auxX > auxY) push_LONG(s,1);
             else push_LONG(s,0);
         } else if (strcmp(token, "!") == 0) {
-            int X = pop_LONG(s);
-            if (X == 0) push_LONG(s,1);
-            else push_LONG(s,0);
+            DATA X = pop(s);
+            if (X.type == 1) {
+                if (X.LONG == 0) push_LONG(s,1);
+                else push_LONG(s,0);
+            }
+            else if (X.type == 2){
+                if (X.DOUBLE == 0) push_LONG(s,1);
+                else push_LONG(s,0);
+            }
+            else {
+                float x = X.CHAR;
+                if (x == 0) push_LONG(s,1);
+                else push_LONG(s,0);
+            }
         } else if (strcmp(token, "e&") == 0) {
             DATA Y = pop(s);
             DATA X = pop(s);
@@ -350,9 +361,9 @@ void parse(char *line) {
             else auxY = Y.DOUBLE;
             if (Z.type == 1) auxZ = Z.LONG;
             else auxZ = Z.DOUBLE;
-            if (auxX == auxY){
-                if (X.type == 1) push_LONG(s, auxX);
-                else push_DOUBLE(s, auxX);
+            if (auxX != 0){
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
             }
             else {
                 if (Z.type == 1) push_LONG(s, auxZ);
