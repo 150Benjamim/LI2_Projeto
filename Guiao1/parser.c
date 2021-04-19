@@ -281,8 +281,8 @@ void parse(char *line) {
             if (Y.type == 1) auxY = Y.LONG;
             else auxY = Y.DOUBLE;
             if (auxX != 0 && auxY != 0){
-                if (X.type == 1) push_LONG(s,auxX);
-                else push_DOUBLE(s,auxX);
+                if (X.type == 1) push_LONG(s,auxY);
+                else push_DOUBLE(s,auxY);
             }
             else push_LONG(s,0);
         } else if (strcmp(token, "e|") == 0) {
@@ -338,6 +338,25 @@ void parse(char *line) {
             else {
                 if (Y.type == 1) push_LONG(s, auxY);
                 else push_DOUBLE(s, auxY);
+            }
+        } else if (strcmp(token, "?") == 0) {
+            DATA Z = pop(s);
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX, auxY, auxZ;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (Z.type == 1) auxZ = Z.LONG;
+            else auxZ = Z.DOUBLE;
+            if (auxX == auxY){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Z.type == 1) push_LONG(s, auxZ);
+                else push_DOUBLE(s, auxZ);
             }
         } else if (strcmp(token, "A") == 0) {
             push(s,A);
