@@ -392,49 +392,38 @@ void parse(char *line) {
         } else if (strcmp(token, "Z") == 0) {
             push(s,ZZ);
         } else if (strcmp(token, ":A") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            A = X;
+            DATA A = pop(s);
+            push(s,A);
         } else if (strcmp(token, ":B") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            B = X;
+            DATA B = pop(s);
+            push(s,B);
         } else if (strcmp(token, ":C") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            C = X;
+            DATA C = pop(s);
+            push(s,C);
         } else if (strcmp(token, ":D") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            D = X;
+            DATA D = pop(s);
+            push(s,D);
         } else if (strcmp(token, ":E") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            E = X;
+            DATA E = pop(s);
+            push(s,E);
         }   else if (strcmp(token, ":F") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            F = X;
+            DATA F = pop(s);
+            push(s,F);
         } else if (strcmp(token, ":N") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            N = X;
+            DATA N = pop(s);
+            push(s,N);
         } else if (strcmp(token, ":S") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            S = X;
+            DATA S = pop(s);
+            push(s,S);
         } else if (strcmp(token, ":X") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            XX = X;
+            DATA XX = pop(s);
+            push(s,XX);
         } else if (strcmp(token, ":Y") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            YY = X;
+            DATA YY = pop(s);
+            push(s,YY);
         } else if (strcmp(token, ":Z") == 0) {
-            DATA X = pop(s);
-            push(s,X);
-            ZZ = X;
+            DATA ZZ = pop(s);
+            push(s,ZZ);
         } else if (strcmp(token, "l") == 0) {
             assert (fgets(coca, 10240, stdin) != NULL);
             push_STRING(s, coca);
