@@ -75,6 +75,284 @@
  * @returns Converter o topo da stack num double.
  */
 
+    void soma(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double r;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r += Y.LONG; else r += Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
+            else push_LONG(s,r);
+    }
+
+    void diferenca(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double r;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r -= Y.LONG; else r -= Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
+            else push_LONG(s,r);
+    }
+    void multiplication(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double r;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r *= Y.LONG; else r *= Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
+            else push_LONG(s,r);
+    }
+    void dividir(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double r,r1;
+            long r2;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r1 = Y.LONG; else r1 = Y.DOUBLE;
+            if ((X.type==1) && (Y.type==1)){
+                r2 = r / r1;
+                push_LONG(s,(r2));
+            }
+            else{
+                push_DOUBLE(s,(r/r1));
+            }
+    }
+    void decrementar(STACK *s)
+    {
+         DATA X = pop(s);
+            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)-1);
+            else if (X.type==1) push_LONG(s,(X.LONG)-1);
+            else if (X.type==4) push_CHAR(s,(X.CHAR)-1);
+    }
+    void incrementar(STACK *s)
+    {
+        DATA X = pop(s);
+            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)+1);
+            else if (X.type==1) push_LONG(s,(X.LONG)+1);
+            else if (X.type==4) push_CHAR(s,(X.CHAR)+1);
+    }
+    void modulo(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            long r1,r2;
+            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
+            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1%r2));
+            else push_LONG(s,(r1%r2));
+    }
+    void exponenciacao(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double r;
+            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
+            if (Y.type==1) r = pow (r,Y.LONG); else r = pow (r,Y.DOUBLE);
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
+            else push_LONG(s,r);
+    }
+    void eee(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            long r1,r2;
+            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
+            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1&r2));
+            else push_LONG(s,(r1&r2));
+    }
+    void ouou(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            long r1,r2;
+            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
+            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1|r2));
+    }
+    void xoe(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            long r1,r2;
+            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
+            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
+            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1^r2));
+    }
+    void not(STACK *s)
+    {
+        long X = pop_LONG(s);
+        push_LONG(s, ~X);
+    }
+    void duplicar(STACK *s)
+    {
+        DATA X = pop(s);
+            push(s,X);
+            push(s,X);
+    }
+    void darpop(STACK *s)
+    {
+        pop(s);
+    }
+    void convertcaractere(STACK *s)
+    {
+        pop(s);
+    }
+    void trocardois(STACK *s)
+    {
+        DATA X = pop(s);
+            DATA Y = pop(s);
+            push(s,X);
+            push(s,Y);
+    }
+    void rodartres(STACK *s)
+    {
+        DATA Z = pop(s);
+            DATA Y = pop(s);
+            DATA X = pop(s);
+            push(s,Y);
+            push(s,Z);
+            push(s,X);
+    }
+    void copiarelemento(STACK *s)
+    {
+        int i = 0;
+            int x = pop_LONG(s);
+            STACK stackAux = *s;
+            while (i!=x) {
+                pop(&stackAux);
+                i++;
+            }
+            DATA A = pop(&stackAux);
+            push(s,A);
+    }
+    void serigual(STACK *s)
+    {
+         DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX == auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+    }
+    void sermenor(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX < auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+    }
+    void sermaior(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX > auxY) push_LONG(s,1);
+            else push_LONG(s,0);
+    }
+    void nope(STACK *s)
+    {
+        int X = pop_LONG(s);
+            if (X == 0) push_LONG(s,1);
+            else push_LONG(s,0);
+    }
+    void shortcute(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX != 0 && auxY != 0){
+                if (X.type == 1) push_LONG(s,auxX);
+                else push_DOUBLE(s,auxX);
+            }
+            else push_LONG(s,0);
+    }
+    void shortcutou(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX == 0 && auxY == 0){
+                push_LONG(s,0);
+            }
+            else if (auxX != 0){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+    }
+    void menordosdois(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX <= auxY){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+    }
+    void maiordosdois(STACK *s)
+    {
+        DATA Y = pop(s);
+            DATA X = pop(s);
+            double auxX;
+            double auxY;
+            if (X.type == 1) auxX = X.LONG;
+            else auxX = X.DOUBLE;
+            if (Y.type == 1) auxY = Y.LONG;
+            else auxY = Y.DOUBLE;
+            if (auxX >= auxY){
+                if (X.type == 1) push_LONG(s, auxX);
+                else push_DOUBLE(s, auxX);
+            }
+            else {
+                if (Y.type == 1) push_LONG(s, auxY);
+                else push_DOUBLE(s, auxY);
+            }
+    }
+
 void parse(char *line) {
 
     char *delims = " \t\n";
@@ -95,6 +373,7 @@ void parse(char *line) {
 
     STACK *s = create_stack();
 
+    
     for (char *token = strtok(line, delims); token != NULL; token = strtok(NULL, delims)) {
         char *sobra;
         char *val_i = token;
@@ -111,264 +390,57 @@ void parse(char *line) {
             if (flag == 1) push_DOUBLE(s,val_d);
             else push_LONG(s,val_l);
         } else if (strcmp(token, "+") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double r;
-            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
-            if (Y.type==1) r += Y.LONG; else r += Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
-            else push_LONG(s,r);
+            soma(s);
         } else if (strcmp(token, "-") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double r;
-            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
-            if (Y.type==1) r -= Y.LONG; else r -= Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
-            else push_LONG(s,r);
+            diferenca(s);
         } else if (strcmp(token, "*") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double r;
-            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
-            if (Y.type==1) r *= Y.LONG; else r *= Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
-            else push_LONG(s,r);
+            multiplication(s);
         } else if (strcmp(token, "/") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double r,r1;
-            long r2;
-            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
-            if (Y.type==1) r1 = Y.LONG; else r1 = Y.DOUBLE;
-            if ((X.type==1) && (Y.type==1)){
-                r2 = r / r1;
-                push_LONG(s,(r2));
-            }
-            else{
-                push_DOUBLE(s,(r/r1));
-            }
+            dividir(s);
         } else if (strcmp(token, "(") == 0) {
-            DATA X = pop(s);
-            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)-1);
-            else if (X.type==1) push_LONG(s,(X.LONG)-1);
-            else if (X.type==4) push_CHAR(s,(X.CHAR)-1);
+           decrementar(s);
         } else if (strcmp(token, ")") == 0) {
-            DATA X = pop(s);
-            if (X.type==2) push_DOUBLE(s,(X.DOUBLE)+1);
-            else if (X.type==1) push_LONG(s,(X.LONG)+1);
-            else if (X.type==4) push_CHAR(s,(X.CHAR)+1);
+            incrementar(s);
         } else if (strcmp(token, "%") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            long r1,r2;
-            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
-            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1%r2));
-            else push_LONG(s,(r1%r2));
+            modulo(s);
         } else if (strcmp(token, "#") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double r;
-            if (X.type==1) r = X.LONG; else r = X.DOUBLE;
-            if (Y.type==1) r = pow (r,Y.LONG); else r = pow (r,Y.DOUBLE);
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,r);
-            else push_LONG(s,r);
+            exponenciacao(s);
         } else if (strcmp(token, "&") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            long r1,r2;
-            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
-            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1&r2));
-            else push_LONG(s,(r1&r2));
+            eee(s);
         } else if (strcmp(token, "|") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            long r1,r2;
-            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
-            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1|r2));
+            ouou(s);
         } else if (strcmp(token, "^") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            long r1,r2;
-            if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
-            if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
-            if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1^r2));
+            xoe(s);
         } else if (strcmp(token, "~") == 0) {
-            long X = pop_LONG(s);
-            push_LONG(s, ~X);
+            not(s);
         } else if (strcmp(token, "_") == 0){
-            DATA X = pop(s);
-            push(s,X);
-            push(s,X);
+            duplicar(s);
         }else if (strcmp(token, ";")== 0){
-            pop(s);
+            darpop(s);
         }else if (strcmp(token, "c") == 0) {
-            DATA X = pop(s);
-            if (X.type==1){
-                char r = X.LONG;
-                push_CHAR(s,r);
-            }
-            else push(s,X);
+            convertcaractere(s);
         }else if (strcmp(token, "\\") == 0){
-            DATA X = pop(s);
-            DATA Y = pop(s);
-            push(s,X);
-            push(s,Y);
+            trocardois(s);
         } else if (strcmp(token, "@") == 0) {
-            DATA Z = pop(s);
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            push(s,Y);
-            push(s,Z);
-            push(s,X);
+            rodartres(s);
         } else if (strcmp(token, "$") == 0) {
-            int i = 0;
-            int x = pop_LONG(s);
-            STACK stackAux = *s;
-            while (i!=x) {
-                pop(&stackAux);
-                i++;
-            }
-            DATA A = pop(&stackAux);
-            push(s,A);
+            copiarelemento(s);
         }else if (strcmp(token, "=") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX == auxY) push_LONG(s,1);
-            else push_LONG(s,0);
+           serigual(s);
         } else if (strcmp(token, "<") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX < auxY) push_LONG(s,1);
-            else push_LONG(s,0);
+            sermenor(s);
         } else if (strcmp(token, ">") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX > auxY) push_LONG(s,1);
-            else push_LONG(s,0);
+            sermaior(s);
         } else if (strcmp(token, "!") == 0) {
-            DATA X = pop(s);
-            if (X.type == 1) {
-                if (X.LONG == 0) push_LONG(s,1);
-                else push_LONG(s,0);
-            }
-            else if (X.type == 2){
-                if (X.DOUBLE == 0) push_LONG(s,1);
-                else push_LONG(s,0);
-            }
-            else {
-                float x = X.CHAR;
-                if (x == 0) push_LONG(s,1);
-                else push_LONG(s,0);
-            }
+            nope(s);
         } else if (strcmp(token, "e&") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX != 0 && auxY != 0){
-                if (X.type == 1) push_LONG(s,auxY);
-                else push_DOUBLE(s,auxY);
-            }
-            else push_LONG(s,0);
+            shortcute(s);
         } else if (strcmp(token, "e|") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX == 0 && auxY == 0){
-                push_LONG(s,0);
-            }
-            else if (auxX != 0){
-                if (X.type == 1) push_LONG(s, auxX);
-                else push_DOUBLE(s, auxX);
-            }
-            else {
-                if (Y.type == 1) push_LONG(s, auxY);
-                else push_DOUBLE(s, auxY);
-            }
+            shortcutou(s);
         } else if (strcmp(token, "e<") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX <= auxY){
-                if (X.type == 1) push_LONG(s, auxX);
-                else push_DOUBLE(s, auxX);
-            }
-            else {
-                if (Y.type == 1) push_LONG(s, auxY);
-                else push_DOUBLE(s, auxY);
-            }
+            menordosdois(s);
         } else if (strcmp(token, "e>") == 0) {
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX;
-            double auxY;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (auxX >= auxY){
-                if (X.type == 1) push_LONG(s, auxX);
-                else push_DOUBLE(s, auxX);
-            }
-            else {
-                if (Y.type == 1) push_LONG(s, auxY);
-                else push_DOUBLE(s, auxY);
-            }
-        } else if (strcmp(token, "?") == 0) {
-            DATA Z = pop(s);
-            DATA Y = pop(s);
-            DATA X = pop(s);
-            double auxX, auxY, auxZ;
-            if (X.type == 1) auxX = X.LONG;
-            else auxX = X.DOUBLE;
-            if (Y.type == 1) auxY = Y.LONG;
-            else auxY = Y.DOUBLE;
-            if (Z.type == 1) auxZ = Z.LONG;
-            else auxZ = Z.DOUBLE;
-            if (auxX != 0){
-                if (Y.type == 1) push_LONG(s, auxY);
-                else push_DOUBLE(s, auxY);
-            }
-            else {
-                if (Z.type == 1) push_LONG(s, auxZ);
-                else push_DOUBLE(s, auxZ);
-            }
+            maiordosdois(s);
         } else if (strcmp(token, "A") == 0) {
             push(s,A);
         } else if (strcmp(token, "B") == 0) {
@@ -392,38 +464,49 @@ void parse(char *line) {
         } else if (strcmp(token, "Z") == 0) {
             push(s,ZZ);
         } else if (strcmp(token, ":A") == 0) {
-            A = pop(s);
-            push(s,A);
+            DATA X = pop(s);
+            push(s,X);
+            A = X;
         } else if (strcmp(token, ":B") == 0) {
-            B = pop(s);
-            push(s,B);
+            DATA X = pop(s);
+            push(s,X);
+            B = X;
         } else if (strcmp(token, ":C") == 0) {
-            C = pop(s);
-            push(s,C);
+            DATA X = pop(s);
+            push(s,X);
+            C = X;
         } else if (strcmp(token, ":D") == 0) {
-            D = pop(s);
-            push(s,D);
+            DATA X = pop(s);
+            push(s,X);
+            D = X;
         } else if (strcmp(token, ":E") == 0) {
-            E = pop(s);
-            push(s,E);
+            DATA X = pop(s);
+            push(s,X);
+            E = X;
         }   else if (strcmp(token, ":F") == 0) {
-            F = pop(s);
-            push(s,F);
+            DATA X = pop(s);
+            push(s,X);
+            F = X;
         } else if (strcmp(token, ":N") == 0) {
-            N = pop(s);
-            push(s,N);
+            DATA X = pop(s);
+            push(s,X);
+            N = X;
         } else if (strcmp(token, ":S") == 0) {
-            S = pop(s);
-            push(s,S);
+            DATA X = pop(s);
+            push(s,X);
+            S = X;
         } else if (strcmp(token, ":X") == 0) {
-            XX = pop(s);
-            push(s,XX);
+            DATA X = pop(s);
+            push(s,X);
+            XX = X;
         } else if (strcmp(token, ":Y") == 0) {
-            YY = pop(s);
-            push(s,YY);
+            DATA X = pop(s);
+            push(s,X);
+            YY = X;
         } else if (strcmp(token, ":Z") == 0) {
-            ZZ = pop(s);
-            push(s,ZZ);
+            DATA X = pop(s);
+            push(s,X);
+            ZZ = X;
         } else if (strcmp(token, "l") == 0) {
             assert (fgets(coca, 10240, stdin) != NULL);
             push_STRING(s, coca);
