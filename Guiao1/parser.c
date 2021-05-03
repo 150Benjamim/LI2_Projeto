@@ -130,52 +130,74 @@ void parse(char *line) {
             case '/':
                 dividir(s);
                 break;
+            case '(':
+                decrementar(s)
+                break;
+            case ')':
+                incrementar(s);
+                break;
+            case '%':
+                modulo(s);
+                break;
+            case '#':
+                exponenciacao(s);
+                break;
+            case '&':
+                eee(s);
+                break;
+            case '|':
+                ouou(s);
+                break;
+            case '^':
+                xoe(s);
+                break;
+            case '~':
+                not(s);
+                break;
+            case '_':
+                duplicar(s);
+                break;
+            case ';':
+                darpop(s);
+                break;
+            case 'c':
+                darpop(s);
+                break;
+            case '\\':
+                trocardois(s);
+                break;
+            case '@':
+                rodartres(s);
+                break;
+            case '$':
+                copiarelemento(s);
+                break;
+            case '=':
+                serigual(s);
+                break;
+            case '<':
+                sermenor(s);
+                break;
+            case '>':
+                sermaior(s);
+                break;
+            case '!':
+                nope(s);
+                break;
+            case 'e&':
+                shortcute(s);
+                break;
+            case 'e|':
+                shortcutou(s);
+                break;
+            case 'e<':
+                menordosdois(s);
+                break;
+            case 'e>':
+                maiordosdois(s);
+                break;
         }
         /**
-        } else if (strcmp(token, "(") == 0) {
-           decrementar(s);
-        } else if (strcmp(token, ")") == 0) {
-            incrementar(s);
-        } else if (strcmp(token, "%") == 0) {
-            modulo(s);
-        } else if (strcmp(token, "#") == 0) {
-            exponenciacao(s);
-        } else if (strcmp(token, "&") == 0) {
-            eee(s);
-        } else if (strcmp(token, "|") == 0) {
-            ouou(s);
-        } else if (strcmp(token, "^") == 0) {
-            xoe(s);
-        } else if (strcmp(token, "~") == 0) {
-            not(s);
-        } else if (strcmp(token, "_") == 0){
-            duplicar(s);
-        }else if (strcmp(token, ";")== 0){
-            darpop(s);
-        }else if (strcmp(token, "c") == 0) {
-            convertcaractere(s);
-        }else if (strcmp(token, "\\") == 0){
-            trocardois(s);
-        } else if (strcmp(token, "@") == 0) {
-            rodartres(s);
-        } else if (strcmp(token, "$") == 0) {
-            copiarelemento(s);
-        }else if (strcmp(token, "=") == 0) {
-           serigual(s);
-        } else if (strcmp(token, "<") == 0) {
-            sermenor(s);
-        } else if (strcmp(token, ">") == 0) {
-            sermaior(s);
-        } else if (strcmp(token, "!") == 0) {
-            nope(s);
-        } else if (strcmp(token, "e&") == 0) {
-            shortcute(s);
-        } else if (strcmp(token, "e|") == 0) {
-            shortcutou(s);
-        } else if (strcmp(token, "e<") == 0) {
-            menordosdois(s);
-        } else if (strcmp(token, "e>") == 0) {
-            maiordosdois(s);
         } else if (strcmp(token, "A") == 0) {
             push(s,A);
         } else if (strcmp(token, "B") == 0) {
