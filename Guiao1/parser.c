@@ -2,7 +2,9 @@
  * @file As funções correspondentes ao parser.
  */
 
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "parser.h"
 #include "stack.h"
 #include "operacoes.h"
@@ -99,24 +101,37 @@ void parse(char *line) {
         char *val_i = token;
         long val_l = strtol(token, &sobra,10);
         double val_d = strtod(token,&sobra);
-        if (strlen(sobra) == 0){
+        if (strlen(sobra) == 0) {
             int i = 0, flag = 0;
-            while(val_i[i++] != '\0'){
-                if(val_i[i] == '.'){
+            while (val_i[i++] != '\0') {
+                if (val_i[i] == '.') {
                     flag = 1;
                     break;
                 }
             }
-            if (flag == 1) push_DOUBLE(s,val_d);
-            else push_LONG(s,val_l);
-        } else if (strcmp(token, "+") == 0) {
-            soma(s);
-        } else if (strcmp(token, "-") == 0) {
-            diferenca(s);
-        } else if (strcmp(token, "*") == 0) {
-            multiplication(s);
-        } else if (strcmp(token, "/") == 0) {
-            dividir(s);
+            if (flag == 1) push_DOUBLE(s, val_d);
+            else push_LONG(s, val_l);
+        }
+        switch (*token)
+        {
+
+            case '+':
+                soma(s);
+                break;
+
+            case '-':
+                diferenca(s);
+                break;
+
+            case '*':
+                multiplication(s);
+                break;
+
+            case '/':
+                dividir(s);
+                break;
+        }
+        /**
         } else if (strcmp(token, "(") == 0) {
            decrementar(s);
         } else if (strcmp(token, ")") == 0) {
@@ -247,6 +262,7 @@ void parse(char *line) {
             else Y = X.DOUBLE;
             push_DOUBLE(s, Y);
         }
+         **/
     }
 
     print_stack(s);
