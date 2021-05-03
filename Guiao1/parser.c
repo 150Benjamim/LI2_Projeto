@@ -196,7 +196,18 @@ void parse(char *line) {
             case 'e>':
                 maiordosdois(s);
                 break;
-        }
+            case 'l':
+                lerlinha(s,coca);
+                break;
+            case 'i':
+                converteinteiro(s, sobra);
+                break;
+            case 'f':
+                covertedouble(s, sobra);
+                break;
+            default
+            printf("Os termos não são válidos")
+        }  
         /**
         } else if (strcmp(token, "A") == 0) {
             push(s,A);
@@ -265,24 +276,11 @@ void parse(char *line) {
             push(s,X);
             ZZ = X;
         } else if (strcmp(token, "l") == 0) {
-            assert (fgets(coca, 10240, stdin) != NULL);
-            push_STRING(s, coca);
+            
         } else if (strcmp(token, "i") == 0) {
-            DATA X = pop(s);
-            int Y;
-            if (X.type == 4) Y = X.CHAR;
-            else if (X.type == 8) Y = strtol(X.STRING, &sobra, 10);
-            else if (X.type == 1) Y = X.LONG;
-            else Y = X.DOUBLE;
-            push_LONG(s, Y);
+            
         } else if (strcmp(token, "f") == 0) {
-            DATA X = pop(s);
-            float Y;
-            if (X.type == 4) Y = X.CHAR;
-            else if (X.type == 8) Y = strtof(X.STRING, &sobra);
-            else if (X.type == 1) Y = X.LONG;
-            else Y = X.DOUBLE;
-            push_DOUBLE(s, Y);
+            
         }
          **/
     }

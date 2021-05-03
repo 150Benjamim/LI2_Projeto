@@ -277,3 +277,28 @@
             else push_DOUBLE(s, auxY);
         }
     }
+    void lerlinha(STACK *s, char x)
+    {
+        assert (fgets(x, 10240, stdin) != NULL);
+        push_STRING(s, x);
+    }
+    void converteinteiro(STACK *s, char *sobra )
+    {
+        DATA X = pop(s);
+        int Y;
+        if (X.type == 4) Y = X.CHAR;
+        else if (X.type == 8) Y = strtol(X.STRING, &sobra, 10);
+        else if (X.type == 1) Y = X.LONG;
+        else Y = X.DOUBLE;
+        push_LONG(s, Y);
+    }
+    void convertedouble(STACK *s, char *sobra)
+    {
+        DATA X = pop(s);
+        float Y;
+        if (X.type == 4) Y = X.CHAR;
+        else if (X.type == 8) Y = strtof(X.STRING, &sobra);
+        else if (X.type == 1) Y = X.LONG;
+        else Y = X.DOUBLE;
+        push_DOUBLE(s, Y);
+    }
