@@ -93,7 +93,7 @@ void parse(char *line) {
     DATA YY = {1,1,0,0,0};
     DATA ZZ = {1,2,0,0,0};
 
-    STACK *s = create_stack();
+    STACK *s = create_stack ();
 
     
     for (char *token = strtok(line, delims); token != NULL; token = strtok(NULL, delims)) {
@@ -114,24 +114,20 @@ void parse(char *line) {
         }
         switch (*token)
         {
-
             case '+':
                 soma(s);
                 break;
-
             case '-':
                 diferenca(s);
                 break;
-
             case '*':
                 multiplication(s);
                 break;
-
             case '/':
                 dividir(s);
                 break;
             case '(':
-                decrementar(s)
+                decrementar(s);
                 break;
             case ')':
                 incrementar(s);
@@ -161,7 +157,7 @@ void parse(char *line) {
                 darpop(s);
                 break;
             case 'c':
-                darpop(s);
+                convertcaractere(s);
                 break;
             case '\\':
                 trocardois(s);
@@ -184,17 +180,8 @@ void parse(char *line) {
             case '!':
                 nope(s);
                 break;
-            case 'e&':
-                shortcute(s);
-                break;
-            case 'e|':
-                shortcutou(s);
-                break;
-            case 'e<':
-                menordosdois(s);
-                break;
-            case 'e>':
-                maiordosdois(s);
+            case '?':
+                ifthenelse(s);
                 break;
             case 'l':
                 lerlinha(s,coca);
@@ -203,13 +190,14 @@ void parse(char *line) {
                 converteinteiro(s, sobra);
                 break;
             case 'f':
-                covertedouble(s, sobra);
+                convertedouble(s, sobra);
                 break;
-            default
-            printf("Os termos não são válidos")
-        }  
-        /**
-        } else if (strcmp(token, "A") == 0) {
+        }
+        if (strcmp(token, "e&") == 0) shortcute(s);
+        else if (strcmp(token, "e|") == 0) shortcutou(s);
+        else if (strcmp(token, "e<") == 0) menordosdois(s);
+        else if (strcmp(token, "e>") == 0) maiordosdois(s);
+        else if (strcmp(token, "A") == 0) {
             push(s,A);
         } else if (strcmp(token, "B") == 0) {
             push(s,B);
@@ -275,14 +263,8 @@ void parse(char *line) {
             DATA X = pop(s);
             push(s,X);
             ZZ = X;
-        } else if (strcmp(token, "l") == 0) {
-            
-        } else if (strcmp(token, "i") == 0) {
-            
-        } else if (strcmp(token, "f") == 0) {
-            
         }
-         **/
+
     }
 
     print_stack(s);
