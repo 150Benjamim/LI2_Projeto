@@ -10,68 +10,11 @@
 #include "operacoes.h"
 
 /**
- * @param line 104 - Aqui verificamos para quando a string tiver o caractér "+".
- * @returns O resultado da soma de dois elementos.
  *
- * @param line 112 - Aqui verificmos para quando a string tiver o caractér "-".
- * @returns O resultado da diferença de dois elementos.
- * 
- * @param line 120 - Aqui verificamos para quando a string tiver o caractér "*".
- * @returns O resultado da multiplicação de dois elementos.
- *
- * @param line 128 - Aqui verificamos para quando a string tiver o caractér "/".
- * @returns O resultado da divisão inteira de dois elementos.
- *
- * @param line 142 - Aqui verificamos para quando a string tiver o caractér "(".
- * @returns A incrementação de um elemento.
- *
- * @param line 146 - Aqui verificamos para quando a string tiver o caractér ")".
- * @returns A decrementação de um elemento.
- *
- * @param line 150 - Aqui verificamos para quando a string tiver o caractér "%".
- * @returns O resto da divisão de dois elementos.
- *
- * @param line 158 - Aqui verificamos para quando a string tiver o caractér "#".
- * @returns O resultado do primeiro elemento elevado ao segundo elemento.
- *
- * @param line 166 - Aqui verificamos para quando a string tiver o caractér "&".
- * @returns Transforma os dois elementos em binário e devolve os bites em comum.
- *
- * @param line 174 - Aqui verificamos para quando a string tiver o caractér "|".
- * @returns Transforma os dois elementos em binário e compara os seus bites. Devolve o bit 1, exceto quando ambos os bites em comparação forem 0, neste caso devolve o bit 0.
- *
- * @param line 181 - Aqui verificamos para quando a string tiver o caractér "^".
- * @returns Transforma os dois elementos em binário e compara os seus bites. Se os bites em comparação forem diferentes, devolve o bit 1. No caso, dos bites serem iguais devolve o bit 0.
- *
- * @param line 188 - Aqui verificamos para quando a string tiver o caractér "~".
- * @returns Transforma o seu único elemento em binário e inverte os valores dos seus bites.
- * 
- * @param line 191 - Aqui verificamos para quando a string tiver o caractér "_".
- * @returns Retornar dois "push's" da stack.
- * 
- * @param line 205 - Aqui verificamos para quando a string tiver o caractér ";".
- * @returns Devolve o primeiro elemento da stack.
- * 
- * @param line 207 - Aqui verificamos para quando a string tiver o caractér "c".
- * @returns Converter o topo da stack para caractér.
  * 
  * @param line 213 - Aqui verificamos para quando a string tiver o caractér "\\".
  * @returns Trocar os dois primeiros elementos do topo da stack.
  * 
- * @param line 218 - Aqui verificamos para quando a string tiver o caractér "@".
- * @returns Rodar os 3 primeiros elementos no topo da stack.
- *
- * @param line 225 - Aqui verificamos para quando a string tiver o caractér "$".
- * @returns Copia o n-ésimo elemento para o topo da stack.
- * 
- * @param line 237 - Aqui verificamos para quando a string tiver o caractér "l".
- * @returns Apenas lê a linha indicada.
- * 
- * @param line 240 - Aqui verificamos para quando a string tiver o caractér "i".
- * @returns Converter o topo da stack num inteiro.
- * 
- * @param line 249 - Aqui verificamos para quando a string tiver o caractér "f".
- * @returns Converter o topo da stack num double.
  */
 
 
