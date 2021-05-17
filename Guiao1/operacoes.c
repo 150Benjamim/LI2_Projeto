@@ -312,10 +312,19 @@ void serigual(STACK *s){
         else push_LONG(s,0);
     }
 
-    void nope(STACK *s){
-        int X = pop_LONG(s);
-        if (X == 0) push_LONG(s,1);
-        else push_LONG(s,0);
+    void nope(STACK *s) {
+        DATA X = pop(s);
+        if (X.type == 1) {
+            if (X.LONG == 0) push_LONG(s, 1);
+            else push_LONG(s, 0);
+        } else if (X.type == 2) {
+            if (X.DOUBLE == 0) push_LONG(s, 1);
+            else push_LONG(s, 0);
+        } else {
+            float x = X.CHAR;
+            if (x == 0) push_LONG(s, 1);
+            else push_LONG(s, 0);
+        }
     }
 
     void shortcute(STACK *s){
@@ -439,7 +448,6 @@ void convertedouble(STACK *s, char *sobra){
 
 
 void ifthenelse(STACK *s){
-
     DATA Z = pop(s);
     DATA Y = pop(s);
     DATA X = pop(s);
@@ -450,15 +458,12 @@ void ifthenelse(STACK *s){
     else auxY = Y.DOUBLE;
     if (Z.type == 1) auxZ = Z.LONG;
     else auxZ = Z.DOUBLE;
-    if (auxX == auxY) {
-        if (X.type == 1) push_LONG(s, auxX);
-        else push_DOUBLE(s, auxX);
-        if (auxX != 0) {
-            if (Y.type == 1) push_LONG(s, auxY);
-            else push_DOUBLE(s, auxY);
-        } else {
-            if (Z.type == 1) push_LONG(s, auxZ);
-            else push_DOUBLE(s, auxZ);
-        }
+    if (auxX != 0){
+        if (Y.type == 1) push_LONG(s, auxY);
+        else push_DOUBLE(s, auxY);
+    }
+    else {
+        if (Z.type == 1) push_LONG(s, auxZ);
+        else push_DOUBLE(s, auxZ);
     }
 }
