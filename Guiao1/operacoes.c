@@ -1,5 +1,7 @@
 #include "stack.h"
+#include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 /**
  * @param s - Stack
@@ -156,6 +158,7 @@ void ouou(STACK *s){
     if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
     if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
     if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1|r2));
+    else push_LONG(s,(r1|r2));
 }
 
 /**
@@ -171,6 +174,7 @@ void xoe(STACK *s){
     if (X.type==1) r1 = X.LONG; else r1 = X.DOUBLE;
     if (Y.type==1) r2 = Y.LONG; else r2 = Y.DOUBLE;
     if ((X.type==2) || (Y.type==2)) push_DOUBLE(s,(r1^r2));
+    else push_LONG(s,(r1^r2));
 }
 
 /**
@@ -213,7 +217,12 @@ void darpop(STACK *s){
  */
 
 void convertcaractere(STACK *s){
-    pop(s);
+    DATA X = pop(s);
+    if (X.type==1){
+        char r = X.LONG;
+        push_CHAR(s,r);
+    }
+    else push(s,X);
 }
 
 /**
@@ -319,8 +328,8 @@ void serigual(STACK *s){
         if (Y.type == 1) auxY = Y.LONG;
         else auxY = Y.DOUBLE;
         if (auxX != 0 && auxY != 0){
-            if (X.type == 1) push_LONG(s,auxX);
-            else push_DOUBLE(s,auxX);
+            if (X.type == 1) push_LONG(s,auxY);
+            else push_DOUBLE(s,auxY);
         }
         else push_LONG(s,0);
     }
@@ -391,7 +400,7 @@ void serigual(STACK *s){
  * @returns Apenas lê a linha indicada.
  */
     
-void lerlinha(STACK *s, char x){
+void lerlinha(STACK *s, char* x){
     assert (fgets(x, 10240, stdin) != NULL);
     push_STRING(s, x);
 }
@@ -402,7 +411,7 @@ void lerlinha(STACK *s, char x){
  * @returns Converter o topo da stack num inteiro.
  */
 
-void converteinteiro(STACK *s, char *sobra ){
+void converteinteiro(STACK *s, char *sobra){
     DATA X = pop(s);
     int Y;
     if (X.type == 4) Y = X.CHAR;
@@ -426,4 +435,30 @@ void convertedouble(STACK *s, char *sobra){
     else if (X.type == 1) Y = X.LONG;
     else Y = X.DOUBLE;
     push_DOUBLE(s, Y);
+}
+
+
+void ifthenelse(STACK *s){
+
+    DATA Z = pop(s);
+    DATA Y = pop(s);
+    DATA X = pop(s);
+    double auxX, auxY, auxZ;
+    if (X.type == 1) auxX = X.LONG;
+    else auxX = X.DOUBLE;
+    if (Y.type == 1) auxY = Y.LONG;
+    else auxY = Y.DOUBLE;
+    if (Z.type == 1) auxZ = Z.LONG;
+    else auxZ = Z.DOUBLE;
+    if (auxX == auxY) {
+        if (X.type == 1) push_LONG(s, auxX);
+        else push_DOUBLE(s, auxX);
+        if (auxX != 0) {
+            if (Y.type == 1) push_LONG(s, auxY);
+            else push_DOUBLE(s, auxY);
+        } else {
+            if (Z.type == 1) push_LONG(s, auxZ);
+            else push_DOUBLE(s, auxZ);
+        }
+    }
 }

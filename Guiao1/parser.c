@@ -45,15 +45,19 @@ void parse(char *line) {
         long val_l = strtol(token, &sobra,10);
         double val_d = strtod(token,&sobra);
         if (strlen(sobra) == 0) {
+
             int i = 0, flag = 0;
-            while (val_i[i++] != '\0') {
+
+            while (val_i[i] != '\0') {
                 if (val_i[i] == '.') {
                     flag = 1;
                     break;
                 }
+                i++;
             }
             if (flag == 1) push_DOUBLE(s, val_d);
             else push_LONG(s, val_l);
+            continue;
         }
         switch (*token)
         {

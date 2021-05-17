@@ -27,6 +27,10 @@ void shortcute(STACK *s);
 void shortcutou(STACK *s);
 void menordosdois(STACK *s);
 void maiordosdois(STACK *s);
+void convertedouble(STACK *s, char *sobra);
+void converteinteiro(STACK *s, char *sobra);
+void lerlinha(STACK *s, char* x);
+void ifthenelse(STACK *s);
 
 
 
